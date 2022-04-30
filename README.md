@@ -43,4 +43,10 @@ kubectl get svc
 ```
 
 ## Detection test
-![detect 1](doc/display1.png)
+there are there 3 classes:
+- wear mask properly
+- wear mask improperly
+- no mask
+![detect 1](doc/display1.jpg)
+counter
+![detect 2](doc/display2.jpg)
