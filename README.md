@@ -27,8 +27,8 @@ sudo docker push raphaelsun/mask_detection:v2
 
 ## customize config.json
 
-customize the input file
-customize the model
+- customize the input file
+- customize the model
  
 
 ## Kubernetes deployment
@@ -41,3 +41,6 @@ kubectl apply -f opendatacam-deployment.yaml
 kubectl apply -f opendatacam-service.yaml
 kubectl get svc
 ```
+
+## Detection test
+![detect 1](doc/display1.png)
