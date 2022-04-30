@@ -1,5 +1,6 @@
 # mask_detection
 ## Build docker image
+vi Dockerfile
 ```
 FROM opendatacam/opendatacam:v3.0.2-xavier
 WORKDIR /var/local/darknet
@@ -24,6 +25,19 @@ sudo docker tag mask_detection :v2 raphaelsun/mask_detection:v2
 sudo docker push raphaelsun/mask_detection:v2
 ```
 
-## Edit config.json
+## customize config.json
+
+customize the input file
+customize the model
+ 
 
 ## Kubernetes deployment
+```
+kubectl create configmap opendatacam --from-file=config.json --dry-run -o yaml | kubectl apply -f -
+kubectl apply -f opendatacam-mongo-pvc.yaml
+kubectl apply -f opendatacam-mongo-deployment.yaml
+kubectl apply -f opendatacam-mongo-service.yaml
+kubectl apply -f opendatacam-deployment.yaml
+kubectl apply -f opendatacam-service.yaml
+kubectl get svc
+```
