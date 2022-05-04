@@ -1,4 +1,16 @@
 # mask_detection
+
+Faced mask is important topic since pandemic. our project aims to provide an integration system of mask detection and alarm with all AI computation performed at the edge, which can detect people in the view of camera and determine whether they are wearing a mask properly.
+
+This project can run on Linux and GPU enabled hardware, especially for Nvidia Jetson nano and Xavier NX. Since this scenario need a light weight hardware, Jetson nano is more cost-effective.
+
+This project is based on the YOLOv4 neural networks and uses Kaggle's Face Mask Detection dataset for training model.
+More abou the YOLOv4, please refer to:
+ [Scaled-YOLOv4: Scaling Cross Stage Partial Network](https://openaccess.thecvf.com/content/CVPR2021/html/Wang_Scaled-YOLOv4_Scaling_Cross_Stage_Partial_Network_CVPR_2021_paper.html) 
+ [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934) 
+
+our test environment is Nvidia Jetson Xavier NX specifically. All AI processing is handled by NVIDIA’s DeepStream video analytics framework.
+
 ## Build docker image
 vi Dockerfile
 ```
@@ -19,6 +31,7 @@ CMD ["./launch.sh"]
 ```
 
 ## Push image
+
 ```
 sudo docker build -t mask_detection:v2
 sudo docker tag mask_detection :v2 raphaelsun/mask_detection:v2
@@ -29,7 +42,6 @@ sudo docker push raphaelsun/mask_detection:v2
 
 - customize the input file
 - customize the model
- 
 
 ## Kubernetes deployment
 ```
